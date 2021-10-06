@@ -1,8 +1,6 @@
 # https://leetcode.com/problems/split-linked-list-in-parts/
 # 725. Split Linked List in Parts
 
-from typing import Optional
-
 
 # Definition for singly-linked list.
 class ListNode:
@@ -11,7 +9,7 @@ class ListNode:
         self.next = next
 
 
-def to_list(node: Optional[ListNode]) -> Optional[list[int]]:
+def to_list(node: ListNode | None) -> list[int] | None:
     if not node:
         return None
     result: list[int] = [node.val]
@@ -35,8 +33,8 @@ def to_list_node(def_list: list[int]):
 
 class Solution:
     def splitListToParts(  # noqa: N802
-        self, head: Optional[ListNode], k: int
-    ) -> list[Optional[ListNode]]:
+        self, head: ListNode | None, k: int
+    ) -> list[ListNode | None]:
         length = 0
         copy_head = head
         while copy_head:
@@ -44,7 +42,7 @@ class Solution:
             copy_head = copy_head.next
         big_chunks = length % k
         chunk_size = length // k
-        result: list[Optional[ListNode]] = []
+        result: list[ListNode | None] = []
         copy_head = head
         for _ in range(big_chunks):
             result.append(copy_head)

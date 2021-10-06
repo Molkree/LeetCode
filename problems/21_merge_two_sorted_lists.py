@@ -1,8 +1,6 @@
 # https://leetcode.com/problems/merge-two-sorted-lists/
 # 21. Merge Two Sorted Lists
 
-from typing import Optional
-
 
 # Definition for singly-linked list.
 class ListNode:
@@ -11,7 +9,7 @@ class ListNode:
         self.next = next
 
 
-def to_list(node: Optional[ListNode]) -> list[int]:
+def to_list(node: ListNode | None) -> list[int]:
     if not node:
         return []
     result: list[int] = [node.val]
@@ -35,8 +33,8 @@ def to_list_node(def_list: list[int]):
 
 class Solution:
     def mergeTwoLists(  # noqa: N802
-        self, l1: Optional[ListNode], l2: Optional[ListNode]
-    ) -> Optional[ListNode]:
+        self, l1: ListNode | None, l2: ListNode | None
+    ) -> ListNode | None:
         if not l1:
             return l2
         if not l2:

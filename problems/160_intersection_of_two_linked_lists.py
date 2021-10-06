@@ -2,16 +2,13 @@
 # 160. Intersection of Two Linked Lists
 
 # Definition for singly-linked list.
-from typing import Optional
-
-
 class ListNode:
     def __init__(self, x: int):
         self.val = x
-        self.next: Optional[ListNode] = None
+        self.next: ListNode | None = None
 
 
-def to_list_node(def_list: list[int], tail: Optional[ListNode] = None):
+def to_list_node(def_list: list[int], tail: ListNode | None = None):
     result = ListNode(def_list.pop(0))
     if not def_list and tail:
         result.next = tail
@@ -27,7 +24,7 @@ def to_list_node(def_list: list[int], tail: Optional[ListNode] = None):
 class Solution:
     def getIntersectionNode(  # noqa: N802
         self, headA: ListNode, headB: ListNode  # noqa: N803
-    ) -> Optional[ListNode]:
+    ) -> ListNode | None:
         # Naive O(n) space solution
         # visited: set[ListNode] = set()
         # head_a_copy = headA
