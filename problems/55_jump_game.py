@@ -6,11 +6,13 @@ class Solution:
     def can_jump_from_ind(self, ind: int, nums: list[int]) -> bool:
         if ind == len(nums) - 1:
             return True
-        if nums[ind] == 0:
+        if nums[ind] <= 0:
             return False
         for i in range(nums[ind]):
             if self.can_jump_from_ind(ind + i + 1, nums):
                 return True
+            else:
+                nums[ind + i + 1] *= -1
         return False
 
     def canJump(self, nums: list[int]) -> bool:  # noqa: N802
