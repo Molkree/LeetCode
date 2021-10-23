@@ -4,21 +4,15 @@
 
 class Solution:
     def findMin(self, nums: list[int]) -> int:  # noqa: N802
-        first_elem = nums[0]
-        ind = len(nums) // 2
-        if ind == 1:
-            return min(nums)
-        ceil = len(nums)
-        while True:
-            if ind + 1 == len(nums):
-                return nums[0]
-            if nums[ind] >= first_elem and nums[ind + 1] < first_elem:
-                return nums[ind + 1]
-            if nums[ind] > first_elem:
-                ind = (ceil + ind) // 2
+        low = 0
+        high = len(nums) - 1
+        while low < high:
+            mid = low + (high - low) // 2
+            if nums[mid] > nums[high]:
+                low = mid + 1
             else:
-                ceil = ind
-                ind //= 2
+                high = mid
+        return nums[low]
 
 
 solution = Solution()
