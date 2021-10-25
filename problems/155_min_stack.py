@@ -3,8 +3,6 @@
 
 
 class MinStack:
-    _stack: list[tuple[int, int]]
-
     def __init__(self):
         self._stack: list[tuple[int, int]] = []
         self._min = None
@@ -13,7 +11,7 @@ class MinStack:
         if not self._stack:
             self._stack.append((val, val))
         else:
-            self._stack.append((val, min(val, self._stack[-1][1])))
+            self._stack.append((val, min(val, self.getMin())))
 
     def pop(self) -> None:
         self._stack.pop()
