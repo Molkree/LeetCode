@@ -2,66 +2,37 @@
 # 1044. Longest Duplicate Substring
 
 
+import functools
+
+
 class Solution:
-    base = 40999999
-    modulus = 999999937
-
-    def rabin_karp(
-        self, s: str, patterns: set[str], pattern_len: int, h: int
-    ) -> tuple[str, bool]:
-        h = pow(self.base, pattern_len - 1) % self.modulus
-        pattern_hashes: set[int] = set()
-        for pattern in patterns:
-            pattern_hash = 0
-            for char in pattern:
-                pattern_hash = (self.base * pattern_hash + ord(char)) % self.modulus
-            pattern_hashes.add(pattern_hash)
-        next_hash = 0
-        for i in range(pattern_len):
-            next_hash = (self.base * next_hash + ord(s[i])) % self.modulus
-        s_len = len(s)
-        patterns_count = {pattern: 0 for pattern in patterns}
-        for i in range(s_len - pattern_len + 1):
-            substring = s[i : i + pattern_len]
-            if next_hash in pattern_hashes and substring in patterns:
-                patterns_count[substring] += 1
-                if patterns_count[substring] == 2:
-                    return substring, True
-            if i < s_len - pattern_len:
-                next_hash = (
-                    next_hash - h * ord(s[i])
-                ) % self.modulus  # remove letter i
-                next_hash = (
-                    next_hash * self.base + ord(s[i + pattern_len])
-                ) % self.modulus  # add letter i + pattern_len
-                next_hash = (
-                    next_hash + self.modulus
-                ) % self.modulus  # make sure that next_hash >= 0
-        return "", False
-
     def longestDupSubstring(self, s: str) -> str:  # noqa: N802
-        s_len = len(s)
-        pattern_len = s_len // 2
-        lower = 1
-        upper = s_len
-        pattern = ""
-        while lower != upper:
-            substrings: set[str] = set()
-            for i in range(s_len - pattern_len + 1):
-                substrings.add(s[i : i + pattern_len])
-            new_pattern, found_dup = self.rabin_karp(
-                s,
-                substrings,
-                pattern_len,
-                pow(self.base, pattern_len - 1) % self.modulus,
+        char_hashes = [ord(char) for char in s]
+        modulus = 2 ** 63 - 1
+
+        def test(index: int) -> int:
+            p = (26 ** index) % modulus
+            cur = functools.reduce(
+                lambda x, y: (x * 26 + y) % modulus, char_hashes[:index]
             )
-            if not found_dup:
-                upper = pattern_len
+            seen = {cur}
+            for i in range(index, len(s)):
+                cur = (cur * 26 + char_hashes[i] - char_hashes[i - index] * p) % modulus
+                if cur in seen:
+                    return i - index + 1
+                seen.add(cur)
+            return 0
+
+        index, low, high = 0, 0, len(s)
+        while low < high:
+            mid = (low + high + 1) // 2
+            new_index = test(mid)
+            if new_index:
+                low = mid
+                index = new_index
             else:
-                pattern = new_pattern
-                lower = pattern_len + 1
-            pattern_len = (upper + lower) // 2
-        return pattern
+                high = mid - 1
+        return s[index : index + low]
 
 
 solution = Solution()
