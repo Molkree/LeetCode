@@ -8,11 +8,11 @@ class Solution:
         second_buy = 10 ** 5 + 1
         first_sell = 0
         second_sell = 0
-        for i in range(len(prices)):
-            first_buy = min(first_buy, prices[i])
-            first_sell = max(first_sell, prices[i] - first_buy)
-            second_buy = min(second_buy, prices[i] - first_sell)
-            second_sell = max(second_sell, prices[i] - second_buy)
+        for price in prices:
+            first_buy = min(first_buy, price)
+            first_sell = max(first_sell, price - first_buy)
+            second_buy = min(second_buy, price - first_sell)
+            second_sell = max(second_sell, price - second_buy)
         return second_sell
 
 
