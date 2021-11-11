@@ -14,31 +14,13 @@ class Solution:
         self, root: TreeNode | None, low: int, high: int
     ) -> TreeNode | None:
         if not root:
-            return root
-        # trim left
-        if root.val == low:
-            root.left = None
-        elif root.val > low:
-            node = root
-            while node.left and node.left.val >= low:
-                node = node.left
-            if node.left:
-                node.left = self.trimBST(node.left.right, low, high)
-        else:
-            root = self.trimBST(root.right, low, high)
-            if not root:
-                return root
-        # trim right
-        if root.val == high:
-            root.right = None
-        elif root.val < high:
-            node = root
-            while node.right and node.right.val <= high:
-                node = node.right
-            if node.right:
-                node.right = self.trimBST(node.right.left, low, high)
-        else:
-            root = self.trimBST(root.left, low, high)
+            return None
+        if root.val < low:
+            return self.trimBST(root.right, low, high)
+        if root.val > high:
+            return self.trimBST(root.left, low, high)
+        root.left = self.trimBST(root.left, low, high)
+        root.right = self.trimBST(root.right, low, high)
         return root
 
 
