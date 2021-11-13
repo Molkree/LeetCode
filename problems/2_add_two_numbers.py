@@ -19,15 +19,13 @@ class Solution:
             value = transfer
             if l1:
                 value += l1.val
+                l1 = l1.next
             if l2:
                 value += l2.val
+                l2 = l2.next
             node.next = ListNode(value % 10)
             node = node.next
             transfer = value // 10
-            if l1:
-                l1 = l1.next
-            if l2:
-                l2 = l2.next
         if transfer:
             node.next = ListNode(1)
         return result.next
