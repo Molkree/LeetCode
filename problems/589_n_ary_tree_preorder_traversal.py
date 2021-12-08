@@ -2,8 +2,11 @@
 # 589. N-ary Tree Preorder Traversal
 
 
+from __future__ import annotations
+
+
 class Node:
-    def __init__(self, val: int, children=None):
+    def __init__(self, val: int, children: list[Node] = []):
         self.val = val
         self.children = children
 

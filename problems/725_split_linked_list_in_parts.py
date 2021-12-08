@@ -2,9 +2,11 @@
 # 725. Split Linked List in Parts
 
 
-# Definition for singly-linked list.
+from __future__ import annotations
+
+
 class ListNode:
-    def __init__(self, val: int = 0, next=None):
+    def __init__(self, val: int = 0, next: ListNode | None = None):
         self.val = val
         self.next = next
 
@@ -48,17 +50,17 @@ class Solution:
             result.append(copy_head)
             last_node = copy_head
             for _ in range(chunk_size):
-                last_node = last_node.next
-            copy_head = last_node.next
-            last_node.next = None
+                last_node = last_node.next  # type: ignore
+            copy_head = last_node.next  # type: ignore
+            last_node.next = None  # type: ignore
         for _ in range(k - big_chunks):
             result.append(copy_head)
             if copy_head:
                 last_node = copy_head
                 for _ in range(chunk_size - 1):
-                    last_node = last_node.next
-                copy_head = last_node.next
-                last_node.next = None
+                    last_node = last_node.next  # type: ignore
+                copy_head = last_node.next  # type: ignore
+                last_node.next = None  # type: ignore
         return result
 
 

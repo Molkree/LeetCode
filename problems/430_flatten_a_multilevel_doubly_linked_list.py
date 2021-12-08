@@ -2,8 +2,13 @@
 # 430. Flatten a Multilevel Doubly Linked List
 
 
+from __future__ import annotations
+
+
 class Node:
-    def __init__(self, val: int, prev, next, child):
+    def __init__(
+        self, val: int, prev: Node | None, next: Node | None, child: Node | None
+    ):
         self.val = val
         self.prev = prev
         self.next = next
@@ -11,7 +16,7 @@ class Node:
 
 
 class Solution:
-    def flatten_children(self, head: Node, next_node: Node) -> Node:
+    def flatten_children(self, head: Node, next_node: Node | None) -> Node:
         node = head
         while node.next:
             if node.child:

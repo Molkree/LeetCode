@@ -2,8 +2,13 @@
 # 129. Sum Root to Leaf Numbers
 
 
+from __future__ import annotations
+
+
 class TreeNode:
-    def __init__(self, val: int = 0, left=None, right=None):
+    def __init__(
+        self, val: int = 0, left: TreeNode | None = None, right: TreeNode | None = None
+    ):
         self.val = val
         self.left = left
         self.right = right
@@ -13,7 +18,7 @@ class Solution:
     def sumNumbers(self, root: TreeNode) -> int:  # noqa: N802
         sum = 0
 
-        def dfs(root: TreeNode, num: int):
+        def dfs(root: TreeNode | None, num: int):
             if not root:
                 return
             num = num * 10 + root.val

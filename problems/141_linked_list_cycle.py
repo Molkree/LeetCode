@@ -1,9 +1,12 @@
 # https://leetcode.com/problems/linked-list-cycle/
 # 141. Linked List Cycle
 
-# Definition for singly-linked list.
+
+from __future__ import annotations
+
+
 class ListNode:
-    def __init__(self, val: int = 0, next=None):
+    def __init__(self, val: int = 0, next: ListNode | None = None):
         self.val = val
         self.next = next
 
@@ -24,7 +27,7 @@ def to_list_node(def_list: list[int], pos: int = -1):
 
 
 class Solution:
-    def hasCycle(self, head: ListNode) -> bool:  # noqa: N802
+    def hasCycle(self, head: ListNode | None) -> bool:  # noqa: N802
         # Naive O(n) space solution
         # visited: set[ListNode] = set()
         # nodes_count = 0

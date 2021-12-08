@@ -2,9 +2,13 @@
 # 222. Count Complete Tree Nodes
 
 
-# Definition for a binary tree node.
+from __future__ import annotations
+
+
 class TreeNode:
-    def __init__(self, val: int = 0, left=None, right=None):
+    def __init__(
+        self, val: int = 0, left: TreeNode | None = None, right: TreeNode | None = None
+    ):
         self.val = val
         self.left = left
         self.right = right
@@ -15,9 +19,11 @@ class Solution:
         while depth:
             max_leaves = 2 ** depth
             if index < max_leaves // 2:
+                assert root.left
                 root = root.left
                 depth -= 1
             else:
+                assert root.right
                 root = root.right
                 depth -= 1
                 index -= max_leaves // 2

@@ -2,8 +2,13 @@
 # 404. Sum of Left Leaves
 
 
+from __future__ import annotations
+
+
 class TreeNode:
-    def __init__(self, val: int = 0, left=None, right=None):
+    def __init__(
+        self, val: int = 0, left: TreeNode | None = None, right: TreeNode | None = None
+    ):
         self.val = val
         self.left = left
         self.right = right
@@ -15,12 +20,12 @@ class Solution:
         stack = [root]
         while stack:
             node = stack.pop()
-            if node.left:
+            if node and node.left:
                 if not node.left.left and not node.left.right:
                     sum += node.left.val
                 else:
                     stack.append(node.left)
-            if node.right:
+            if node and node.right:
                 stack.append(node.right)
         return sum
 

@@ -1,12 +1,17 @@
 # https://leetcode.com/problems/cousins-in-binary-tree/
 # 993. Cousins in Binary Tree
 
+
+from __future__ import annotations
+
 from collections import deque
 
 
 # Definition for a binary tree node.
 class TreeNode:
-    def __init__(self, val: int = 0, left=None, right=None):
+    def __init__(
+        self, val: int = 0, left: TreeNode | None = None, right: TreeNode | None = None
+    ):
         self.val = val
         self.left = left
         self.right = right

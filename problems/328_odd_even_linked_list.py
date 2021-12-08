@@ -2,8 +2,11 @@
 # 328. Odd Even Linked List
 
 
+from __future__ import annotations
+
+
 class ListNode:
-    def __init__(self, val: int = 0, next=None):
+    def __init__(self, val: int = 0, next: ListNode | None = None):
         self.val = val
         self.next = next
 
@@ -15,7 +18,7 @@ class Solution:
         odd = head
         even_head = head.next
         even = even_head
-        while even and even.next:
+        while even and even.next and odd:
             odd.next = even.next
             odd = odd.next
             even.next = odd.next

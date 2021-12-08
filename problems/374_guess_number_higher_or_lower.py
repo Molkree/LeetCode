@@ -3,7 +3,7 @@
 
 
 def guess(num: int) -> int:
-    pass
+    return 0
 
 
 class Solution:
