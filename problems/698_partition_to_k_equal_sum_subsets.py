@@ -20,7 +20,7 @@ class Solution:
             for i in range(ind, len(nums)):
                 if not visited[i] and current_sum + nums[i] <= subset_target:
                     visited[i] = True
-                    if can_partition(k, current_sum + nums[i], ind + 1):
+                    if can_partition(k, current_sum + nums[i], i + 1):
                         return True
                     visited[i] = False
             return False
