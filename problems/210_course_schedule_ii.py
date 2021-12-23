@@ -9,7 +9,7 @@ class Solution:
     def findOrder(  # noqa: N802
         self, num_courses: int, prerequisites: list[list[int]]
     ) -> list[int]:
-        neighbours: defaultdict[int, set[int]] = defaultdict(set[int])
+        neighbours = defaultdict[int, set[int]](set[int])
         for start, end in prerequisites:
             neighbours[start].add(end)
         todo = [False] * num_courses
