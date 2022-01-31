@@ -30,7 +30,7 @@ class Solution:
         return root, index
 
     def bstFromPreorder(self, preorder: list[int]) -> TreeNode | None:  # noqa: N802
-        return self.build_bst(0, 10 ** 8 + 1, preorder, 0)[0]
+        return self.build_bst(0, 10**8 + 1, preorder, 0)[0]
 
 
 solution = Solution()

@@ -6,7 +6,7 @@ class Solution:
     def findMinArrowShots(self, points: list[list[int]]) -> int:  # noqa: N802
         points.sort()
         arrows = 1
-        min_end = 2 ** 31
+        min_end = 2**31
         for start, end in points:
             if start > min_end:
                 arrows += 1

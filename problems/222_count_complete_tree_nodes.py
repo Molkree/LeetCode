@@ -17,7 +17,7 @@ class TreeNode:
 class Solution:
     def count_children(self, root: TreeNode, index: int, depth: int) -> int:
         while depth:
-            max_leaves = 2 ** depth
+            max_leaves = 2**depth
             if index < max_leaves // 2:
                 assert root.left
                 root = root.left
@@ -53,7 +53,7 @@ class Solution:
                 high = mid
         result = 0
         for i in range(depth):
-            result += 2 ** i
+            result += 2**i
         return result + 2 * low + self.count_children(root, low, depth - 1)
 
 

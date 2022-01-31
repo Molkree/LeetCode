@@ -22,10 +22,10 @@ class Solution:
             return 0
         num = int(num_s)
         num = -num if negative else num
-        if num < -(2 ** 31):
-            num = -(2 ** 31)
-        elif 2 ** 31 - 1 < num:
-            num = 2 ** 31 - 1
+        if num < -(2**31):
+            num = -(2**31)
+        elif 2**31 - 1 < num:
+            num = 2**31 - 1
         return num
 
 

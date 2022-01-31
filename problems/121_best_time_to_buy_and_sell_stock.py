@@ -4,7 +4,7 @@
 
 class Solution:
     def maxProfit(self, prices: list[int]) -> int:  # noqa: N802
-        buy = 10 ** 5 + 1
+        buy = 10**5 + 1
         sell = 0
         for price in prices:
             buy = min(buy, price)

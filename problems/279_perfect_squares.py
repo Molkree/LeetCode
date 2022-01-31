@@ -7,7 +7,7 @@ class Solution:
         square_sums: list[int] = [0]
         while len(square_sums) <= n:
             num = len(square_sums)
-            num_squares = 10 ** 4
+            num_squares = 10**4
             for i in range(1, num + 1):
                 if i * i > num:
                     break

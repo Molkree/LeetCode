@@ -7,7 +7,7 @@ from functools import cache
 
 class Solution:
     def numTilings(self, n: int) -> int:  # noqa: N802
-        modulo = 10 ** 9 + 7
+        modulo = 10**9 + 7
 
         @cache
         def partially_covered(n: int) -> int:
