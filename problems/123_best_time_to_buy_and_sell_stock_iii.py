@@ -4,8 +4,8 @@
 
 class Solution:
     def maxProfit(self, prices: list[int]) -> int:  # noqa: N802
-        first_buy = 10 ** 5 + 1
-        second_buy = 10 ** 5 + 1
+        first_buy = 10**5 + 1
+        second_buy = 10**5 + 1
         first_sell = 0
         second_sell = 0
         for price in prices:

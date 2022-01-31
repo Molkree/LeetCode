@@ -8,10 +8,10 @@ import functools
 class Solution:
     def longestDupSubstring(self, s: str) -> str:  # noqa: N802
         char_hashes = [ord(char) for char in s]
-        modulus = 2 ** 63 - 1
+        modulus = 2**63 - 1
 
         def test(index: int) -> int:
-            p = (26 ** index) % modulus
+            p = (26**index) % modulus
             cur = functools.reduce(
                 lambda x, y: (x * 26 + y) % modulus, char_hashes[:index]
             )

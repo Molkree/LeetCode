@@ -7,7 +7,7 @@ import math
 
 class Solution:
     def nthMagicalNumber(self, n: int, a: int, b: int) -> int:  # noqa: N802
-        modulo = 10 ** 9 + 7
+        modulo = 10**9 + 7
         lcm = math.lcm(a, b)
         m = lcm // a + lcm // b - 1
         q, r = divmod(n, m)

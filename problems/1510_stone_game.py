@@ -10,7 +10,7 @@ class Solution:
     def winnerSquareGame(self, n: int) -> bool:  # noqa: N802
         if n == 0:
             return False
-        num = int(n ** 0.5)
+        num = int(n**0.5)
         while num >= 1:
             if not self.winnerSquareGame(n - num * num):
                 return True
