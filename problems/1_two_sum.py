@@ -4,7 +4,7 @@
 
 class Solution:
     def twoSum(self, nums: list[int], target: int) -> list[int]:  # noqa: N802
-        indexes: dict[int, int] = {}
+        indexes = dict[int, int]()
         for index, num in enumerate(nums):
             if (other := target - num) in indexes:
                 return [indexes[other], index]

@@ -4,8 +4,8 @@
 
 class Solution:
     def two_sum(self, nums: list[int], target: int) -> list[list[int]]:
-        num_set: set[int] = set()
-        result: list[list[int]] = []
+        num_set = set[int]()
+        result = list[list[int]]()
         for num in nums:
             if (other := target - num) in num_set:
                 result.append([other, num])
@@ -13,8 +13,8 @@ class Solution:
         return result
 
     def threeSum(self, nums: list[int]) -> list[list[int]]:  # noqa: N802
-        result: list[list[int]] = []
-        triplets: set[tuple[int, ...]] = set()
+        result = list[list[int]]()
+        triplets = set[tuple[int, ...]]()
         nums.sort()
         for i in range(len(nums)):
             if nums[i] > 0:
