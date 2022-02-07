@@ -21,3 +21,5 @@ repos:
     hooks:
     - id: flake8
       additional_dependencies: [pep8-naming]
+default_language_version:
+    python: python3.10
