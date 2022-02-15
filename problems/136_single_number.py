@@ -2,8 +2,15 @@
 # 136. Single Number
 
 
+import operator
+from functools import reduce
+
+
 class Solution:
     def singleNumber(self, nums: list[int]) -> int:  # noqa: N802
+        # functional way
+        return reduce(operator.xor, nums, 0)
+        # regular way
         single_number = 0
         for num in nums:
             single_number ^= num
