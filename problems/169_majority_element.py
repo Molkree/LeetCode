@@ -4,7 +4,7 @@
 
 class Solution:
     def majorityElement(self, nums: list[int]) -> int:  # noqa: N802
-        weight = 1
+        weight = 0
         majority_element = nums[0]
         for num in nums:
             if num == majority_element:
