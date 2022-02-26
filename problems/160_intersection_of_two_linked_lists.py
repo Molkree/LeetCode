@@ -1,14 +1,14 @@
 # https://leetcode.com/problems/intersection-of-two-linked-lists/
 # 160. Intersection of Two Linked Lists
 
-# Definition for singly-linked list.
+
 class ListNode:
     def __init__(self, x: int):
         self.val = x
         self.next: ListNode | None = None
 
 
-def to_list_node(def_list: list[int], tail: ListNode | None = None):
+def to_list_node(def_list: list[int], tail: ListNode | None = None) -> ListNode:
     result = ListNode(def_list.pop(0))
     if not def_list and tail:
         result.next = tail
@@ -23,7 +23,7 @@ def to_list_node(def_list: list[int], tail: ListNode | None = None):
 
 class Solution:
     def getIntersectionNode(  # noqa: N802
-        self, headA: ListNode, headB: ListNode  # noqa: N803
+        self, head_a: ListNode, head_b: ListNode
     ) -> ListNode | None:
         # Naive O(n) space solution
         # visited: set[ListNode] = set()
@@ -39,11 +39,11 @@ class Solution:
         # return None
 
         # Cool O(1) space solution
-        head_a_copy = headA
-        head_b_copy = headB
+        head_a_copy: ListNode | None = head_a
+        head_b_copy: ListNode | None = head_b
         while head_a_copy is not head_b_copy:
-            head_a_copy = headB if head_a_copy is None else head_a_copy.next
-            head_b_copy = headA if head_b_copy is None else head_b_copy.next
+            head_a_copy = head_b if head_a_copy is None else head_a_copy.next
+            head_b_copy = head_a if head_b_copy is None else head_b_copy.next
         return head_a_copy
 
 
