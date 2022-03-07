@@ -14,7 +14,7 @@ class ListNode:
 def to_list(node: ListNode | None) -> list[int]:
     if not node:
         return []
-    result: list[int] = [node.val]
+    result = [node.val]
     node = node.next
     while node:
         result.append(node.val)
@@ -22,7 +22,7 @@ def to_list(node: ListNode | None) -> list[int]:
     return result
 
 
-def to_list_node(def_list: list[int]):
+def to_list_node(def_list: list[int]) -> ListNode | None:
     if not def_list:
         return None
     result = ListNode(def_list.pop(0))
