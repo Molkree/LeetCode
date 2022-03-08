@@ -11,7 +11,7 @@ class ListNode:
         self.next = next
 
 
-def to_list_node(def_list: list[int], pos: int = -1):
+def to_list_node(def_list: list[int], pos: int = -1) -> ListNode | None:
     if not def_list:
         return None
     result = ListNode(def_list.pop(0))
