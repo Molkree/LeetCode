@@ -5,9 +5,9 @@
 class Solution:
     def isValid(self, s: str) -> bool:  # noqa: N802
         pairs = {"(": ")", "{": "}", "[": "]"}
-        stack: list[str] = []
+        stack = list[str]()
         for parenthesis in s:
-            if parenthesis in ("(", "{", "["):
+            if parenthesis in "({[":
                 stack.append(parenthesis)
             elif not stack or pairs[stack.pop()] != parenthesis:
                 return False
