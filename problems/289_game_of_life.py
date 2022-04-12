@@ -14,22 +14,24 @@ class Solution:
                         continue
                     if j + y < 0 or j + y >= len(board[0]):
                         continue
-                    count += board[i + x][j + y]
+                    count += board[i + x][j + y] & 1
             return count
 
-        next_state = [[0 for _ in range(len(board[0]))] for _ in range(len(board))]
         for i in range(len(board)):
             for j in range(len(board[0])):
                 count = neighbour_count(i, j)
                 if board[i][j] == 1:
-                    if count in (2, 3):
-                        next_state[i][j] = 1
+                    if count < 2 or count > 3:
+                        board[i][j] = -1
                 else:
                     if count == 3:
-                        next_state[i][j] = 1
+                        board[i][j] = 2
         for i in range(len(board)):
             for j in range(len(board[0])):
-                board[i][j] = next_state[i][j]
+                if board[i][j] == 2:
+                    board[i][j] = 1
+                elif board[i][j] == -1:
+                    board[i][j] = 0
 
 
 solution = Solution()
