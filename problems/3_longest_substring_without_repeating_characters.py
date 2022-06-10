@@ -19,16 +19,14 @@ class Solution:
         #         }
         # return max(max_len, len(sub_set))
         # faster solution with two pointers
-        sub_set: dict[str, int] = {}
+        sub_set = dict[str, int]()
         max_len = 0
         low, high = 0, 0
         while high < len(s):
-            if (char := s[high]) not in sub_set:
-                sub_set[char] = high
-            else:
+            if (char := s[high]) in sub_set:
                 max_len = max(max_len, high - low)
                 low = max(low, sub_set[char] + 1)
-                sub_set[char] = high
+            sub_set[char] = high
             high += 1
         return max(max_len, high - low)
 
