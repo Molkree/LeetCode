@@ -18,7 +18,7 @@ class Solution:
     def sumNumbers(self, root: TreeNode) -> int:  # noqa: N802
         sum = 0
 
-        def dfs(root: TreeNode | None, num: int):
+        def dfs(root: TreeNode | None, num: int) -> None:
             if not root:
                 return
             num = num * 10 + root.val
