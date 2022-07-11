@@ -2,7 +2,7 @@
 # 212. Word Search II
 
 
-from typing import Counter
+from collections import Counter
 
 
 class Trie:
