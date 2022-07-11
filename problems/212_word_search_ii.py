@@ -6,7 +6,7 @@ from collections import Counter
 
 
 class Trie:
-    def __init__(self):
+    def __init__(self) -> None:
         self.children: dict[str, Trie] = {}
         self.is_word: bool = False
 
@@ -18,67 +18,49 @@ class Trie:
             node = node.children[char]
         node.is_word = True
 
-    def search(self, word: str) -> bool:
-        node = self
-        for char in word:
-            if char in node.children:
-                node = node.children[char]
-            else:
-                return False
-        return node.is_word
-
-    def startsWith(self, prefix: str) -> bool:  # noqa: N802
-        node = self
-        for char in prefix:
-            if char in node.children:
-                node = node.children[char]
-            else:
-                return False
-        return True
-
-    def delete(self, word: str) -> bool:
-        def _delete(node: Trie, key: str, d: int) -> bool:
-            if d == len(key):
-                node.is_word = False
-            else:
-                char = key[d]
-                if char in node.children and _delete(node.children[char], key, d + 1):
-                    del node.children[char]
-            return not node.is_word and len(node.children) == 0
-
-        return _delete(self, word, 0)
-
 
 class Solution:
     def find_words(
         self,
         board: list[list[str]],
-        i: int,
-        j: int,
+        row: int,
+        column: int,
         visited: set[tuple[int, int]],
         trie: Trie,
         prefix: str,
     ) -> set[str]:
-        height = len(board)
-        width = len(board[0])
-        if i < 0 or i > height - 1 or j < 0 or j > width - 1 or (i, j) in visited:
-            if trie.search(prefix):
-                trie.delete(prefix)
-                return {prefix}
-            return set()
-        result: set[str] = set()
-        if trie.startsWith(prefix):
-            if trie.search(prefix):
-                result.add(prefix)
-                trie.delete(prefix)
-            visited.add((i, j))
-            result |= (
-                self.find_words(board, i - 1, j, visited, trie, prefix + board[i][j])
-                | self.find_words(board, i + 1, j, visited, trie, prefix + board[i][j])
-                | self.find_words(board, i, j - 1, visited, trie, prefix + board[i][j])
-                | self.find_words(board, i, j + 1, visited, trie, prefix + board[i][j])
-            )
-            visited.remove((i, j))
+        prefix += board[row][column]
+        parent_trie = trie
+        trie = trie.children[board[row][column]]
+        result = set[str]()
+        if trie.is_word:
+            result = {prefix}
+            trie.is_word = False
+            if len(trie.children) == 0:
+                del parent_trie.children[board[row][column]]
+                return result
+        visited.add((row, column))
+        for new_row, new_column in (
+            (row, column - 1),
+            (row, column + 1),
+            (row - 1, column),
+            (row + 1, column),
+        ):
+            if (
+                (new_row, new_column) not in visited
+                and 0 <= new_row < len(board)
+                and 0 <= new_column < len(board[0])
+                and board[new_row][new_column] in trie.children
+            ):
+                result |= self.find_words(
+                    board,
+                    new_row,
+                    new_column,
+                    visited,
+                    trie,
+                    prefix,
+                )
+        visited.remove((row, column))
         return result
 
     def findWords(  # noqa: N802
@@ -90,9 +72,10 @@ class Solution:
         height = len(board)
         width = len(board[0])
         result: set[str] = set()
-        for i in range(height):
-            for j in range(width):
-                result |= self.find_words(board, i, j, set(), trie, prefix="")
+        for row in range(height):
+            for column in range(width):
+                if board[row][column] in trie.children:
+                    result |= self.find_words(board, row, column, set(), trie, "")
                 if len(result) == len(words):
                     break
         return list(result)
