@@ -4,7 +4,8 @@
 
 class Solution:
     def findComplement(self, num: int) -> int:  # noqa: N802
-        return int(bin(num)[2:].translate(str.maketrans({"0": "1", "1": "0"})), 2)
+        translation = str.maketrans({"0": "1", "1": "0"})
+        return int(bin(num)[2:].translate(translation), 2)
 
 
 solution = Solution()
