@@ -18,7 +18,7 @@ class Solution:
         for count in range(1, n):
             prev_parens_a = self.generateParenthesis(count)
             prev_parens_b = self.generateParenthesis(n - count)
-            for (parens_a, parens_b) in product(prev_parens_a, prev_parens_b):
+            for parens_a, parens_b in product(prev_parens_a, prev_parens_b):
                 parenthesis.add(f"{parens_a}{parens_b}")
         return list(parenthesis)
 
