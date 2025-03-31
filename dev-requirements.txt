@@ -1,5 +1,5 @@
 black
 flake8
-pep8-naming
 mypy
+pep8-naming
 pre-commit
