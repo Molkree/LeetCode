@@ -38,4 +38,3 @@ sorted_list = solution.insertionSortList(head)
 
 head = ListNode(-1, ListNode(5, ListNode(3, ListNode(0))))
 sorted_list = solution.insertionSortList(head)
-pass

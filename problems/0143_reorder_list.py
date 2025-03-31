@@ -42,4 +42,3 @@ solution = Solution()
 
 head = ListNode(1, ListNode(2, ListNode(3, ListNode(4))))
 solution.reorderList(head)
-pass
