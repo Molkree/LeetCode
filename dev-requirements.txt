@@ -1,0 +1,5 @@
+black
+flake8
+pep8-naming
+mypy
+pre-commit
