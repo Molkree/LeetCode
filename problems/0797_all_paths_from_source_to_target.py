@@ -14,15 +14,15 @@ class Solution:
             if node == len(graph) - 1:
                 paths.append(path)
             else:
-                for neighbor in graph[node]:
-                    stack.append(path + [neighbor])
+                for neighbour in graph[node]:
+                    stack.append(path + [neighbour])
         return paths
 
 
 solution = Solution()
 
 
-graph = [[1, 2], [3], [3], []]
+graph: list[list[int]] = [[1, 2], [3], [3], []]
 assert sorted(solution.allPathsSourceTarget(graph)) == sorted([[0, 1, 3], [0, 2, 3]])
 
 graph = [[4, 3, 1], [3, 2, 4], [3], [4], []]
