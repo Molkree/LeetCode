@@ -37,7 +37,7 @@ repos:
           - --remove-all-unused-imports
 
   - repo: https://github.com/pycqa/flake8
-    rev: 7.2.0
+    rev: 7.3.0
     hooks:
       - id: flake8
         additional_dependencies: [pep8-naming]
