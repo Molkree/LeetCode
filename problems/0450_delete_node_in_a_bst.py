@@ -2,9 +2,6 @@
 # 450. Delete Node in a BST
 
 
-from __future__ import annotations
-
-
 class TreeNode:
     def __init__(
         self, val: int = 0, left: TreeNode | None = None, right: TreeNode | None = None

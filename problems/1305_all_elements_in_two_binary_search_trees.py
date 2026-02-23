@@ -2,8 +2,6 @@
 # 1305. All Elements in Two Binary Search Trees
 
 
-from __future__ import annotations
-
 from heapq import merge
 
 

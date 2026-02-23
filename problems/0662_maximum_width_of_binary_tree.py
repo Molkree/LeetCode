@@ -2,8 +2,6 @@
 # 662. Maximum Width of Binary Tree
 
 
-from __future__ import annotations
-
 from collections import deque
 
 

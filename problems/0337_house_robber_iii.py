@@ -2,8 +2,6 @@
 # 337. House Robber III
 
 
-from __future__ import annotations
-
 from functools import cache
 
 

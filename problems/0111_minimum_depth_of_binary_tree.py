@@ -2,9 +2,6 @@
 # 111. Minimum Depth of Binary Tree
 
 
-from __future__ import annotations
-
-
 class TreeNode:
     def __init__(
         self, val: int = 0, left: TreeNode | None = None, right: TreeNode | None = None

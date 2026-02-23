@@ -2,9 +2,6 @@
 # 876. Middle of the Linked List
 
 
-from __future__ import annotations
-
-
 class ListNode:
     def __init__(self, val: int = 0, next: ListNode | None = None):
         self.val = val

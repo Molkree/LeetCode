@@ -1,7 +1,6 @@
 # https://leetcode.com/problems/binary-tree-level-order-traversal/
 # 102. Binary Tree Level Order Traversal
 
-from __future__ import annotations
 
 from collections import deque
 

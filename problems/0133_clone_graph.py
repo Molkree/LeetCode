@@ -2,9 +2,6 @@
 # 133. Clone Graph
 
 
-from __future__ import annotations
-
-
 class Node:
     def __init__(self, val: int = 0, neighbors: list[Node] | None = None):
         self.val = val

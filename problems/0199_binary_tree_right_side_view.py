@@ -2,8 +2,6 @@
 # 199. Binary Tree Right Side View
 
 
-from __future__ import annotations
-
 from collections import deque
 
 

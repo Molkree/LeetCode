@@ -2,9 +2,6 @@
 # 138. Copy List with Random Pointer
 
 
-from __future__ import annotations
-
-
 class Node:
     def __init__(self, x: int, next: Node | None = None, random: Node | None = None):
         self.val = int(x)

@@ -2,8 +2,6 @@
 # 110. Balanced Binary Tree
 
 
-from __future__ import annotations
-
 from functools import cache
 
 

@@ -2,9 +2,6 @@
 # 559. Maximum Depth of N-ary Tree
 
 
-from __future__ import annotations
-
-
 class Node:
     def __init__(self, val: int, children: list[Node]):
         self.val = val

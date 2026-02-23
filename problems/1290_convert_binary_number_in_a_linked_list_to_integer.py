@@ -2,9 +2,6 @@
 # 1290. Convert Binary Number in a Linked List to Integer
 
 
-from __future__ import annotations
-
-
 class ListNode:
     def __init__(self, val: int = 0, next: ListNode | None = None):
         self.val = val

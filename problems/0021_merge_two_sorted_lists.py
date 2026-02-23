@@ -2,9 +2,6 @@
 # 21. Merge Two Sorted Lists
 
 
-from __future__ import annotations
-
-
 class ListNode:
     def __init__(self, val: int = 0, next: ListNode | None = None):
         self.val = val

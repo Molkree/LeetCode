@@ -2,8 +2,6 @@
 # 23. Merge k Sorted Lists
 
 
-from __future__ import annotations
-
 import heapq
 
 

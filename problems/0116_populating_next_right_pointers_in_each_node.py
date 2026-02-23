@@ -2,9 +2,6 @@
 # 116. Populating Next Right Pointers in Each Node
 
 
-from __future__ import annotations
-
-
 class Node:
     def __init__(
         self,

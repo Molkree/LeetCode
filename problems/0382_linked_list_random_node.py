@@ -1,7 +1,6 @@
 # https://leetcode.com/problems/linked-list-random-node/
 # 382. Linked List Random Node
 
-from __future__ import annotations
 
 import random
 

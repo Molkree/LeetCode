@@ -2,9 +2,6 @@
 # 430. Flatten a Multilevel Doubly Linked List
 
 
-from __future__ import annotations
-
-
 class Node:
     def __init__(
         self, val: int, prev: Node | None, next: Node | None, child: Node | None

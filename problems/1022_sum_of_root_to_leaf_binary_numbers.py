@@ -2,8 +2,6 @@
 # 1022. Sum of Root To Leaf Binary Numbers
 
 
-from __future__ import annotations
-
 from typing import Literal
 
 
