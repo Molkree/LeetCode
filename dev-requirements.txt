@@ -1,5 +1,5 @@
-black
-flake8
-mypy
-pep8-naming
-prek
+black==26.1.0
+flake8==7.3.0
+mypy==1.19.1
+pep8-naming==0.15.1
+prek==0.3.3
