@@ -3,4 +3,4 @@ flake8==7.3.0
 isort==8.0.1
 mypy==1.20.1
 pep8-naming==0.15.1
-prek==0.3.8
+prek==0.3.9
