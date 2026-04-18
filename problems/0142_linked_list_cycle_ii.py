@@ -3,7 +3,7 @@
 
 
 class ListNode:
-    def __init__(self, x: int):
+    def __init__(self, x: int) -> None:
         self.val = x
         self.next: ListNode | None = None
 
@@ -22,6 +22,7 @@ class Solution:
                     slow = slow.next  # type: ignore
                     fast = fast.next  # type: ignore
                 return slow
+        return None
 
 
 solution = Solution()

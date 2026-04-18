@@ -3,7 +3,7 @@
 
 
 class Trie:
-    def __init__(self):
+    def __init__(self) -> None:
         self.children: dict[str, Trie] = {}
         self.is_word: bool = False
 

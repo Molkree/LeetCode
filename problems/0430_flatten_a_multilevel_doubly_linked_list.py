@@ -5,7 +5,7 @@
 class Node:
     def __init__(
         self, val: int, prev: Node | None, next: Node | None, child: Node | None
-    ):
+    ) -> None:
         self.val = val
         self.prev = prev
         self.next = next
@@ -27,7 +27,7 @@ class Solution:
         return head
 
     def flatten(self, head: Node) -> Node:
-        node = head
+        node: Node | None = head
         while node:
             if node.child:
                 node.next = self.flatten_children(node.child, node.next)
@@ -45,12 +45,8 @@ head.child = Node(3, None, None, None)
 node = Node(2, head, None, None)
 head.next = node
 head = solution.flatten(head)
-while head:
-    print(head.val)
-    head = head.next
+assert head.val == 1
 
 head = Node(1, None, None, Node(2, None, None, Node(3, None, None, None)))
 head = solution.flatten(head)
-while head:
-    print(head.val)
-    head = head.next
+assert head.val == 1

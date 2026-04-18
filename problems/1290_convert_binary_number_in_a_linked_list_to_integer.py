@@ -3,7 +3,7 @@
 
 
 class ListNode:
-    def __init__(self, val: int = 0, next: ListNode | None = None):
+    def __init__(self, val: int = 0, next: ListNode | None = None) -> None:
         self.val = val
         self.next = next
 
@@ -11,7 +11,7 @@ class ListNode:
 class Solution:
     def getDecimalValue(self, head: ListNode) -> int:  # noqa: N802
         bin_value = "0b"
-        node = head
+        node: ListNode | None = head
         while node:
             bin_value += str(node.val)
             node = node.next

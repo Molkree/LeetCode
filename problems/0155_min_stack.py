@@ -3,7 +3,7 @@
 
 
 class MinStack:
-    def __init__(self):
+    def __init__(self) -> None:
         self._stack: list[tuple[int, int]] = []
         self._min = None
 

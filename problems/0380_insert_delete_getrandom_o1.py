@@ -6,7 +6,7 @@ import random
 
 
 class RandomizedSet:
-    def __init__(self):
+    def __init__(self) -> None:
         self.values: list[int] = []
         self.value_to_index: dict[int, int] = {}
 

@@ -3,7 +3,7 @@
 
 
 class ListNode:
-    def __init__(self, val: int = 0, next: ListNode | None = None):
+    def __init__(self, val: int = 0, next: ListNode | None = None) -> None:
         self.val = val
         self.next = next
 
@@ -13,10 +13,10 @@ class Solution:
         if not head:
             return
         lst = list[ListNode]()
-        head_copy = head
-        while head_copy:
-            lst.append(head_copy)
-            head_copy = head_copy.next
+        head_iter: ListNode | None = head
+        while head_iter:
+            lst.append(head_iter)
+            head_iter = head_iter.next
         head_copy = head
         count = 1
         i = 0

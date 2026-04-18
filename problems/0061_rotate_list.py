@@ -3,7 +3,7 @@
 
 
 class ListNode:
-    def __init__(self, val: int = 0, next: ListNode | None = None):
+    def __init__(self, val: int = 0, next: ListNode | None = None) -> None:
         self.val = val
         self.next = next
 
@@ -28,11 +28,11 @@ class Solution:
             new_head = new_head.next  # type: ignore
         new_tail = new_head
         new_head = new_head.next  # type: ignore
-        new_tail.next = None  # type: ignore
+        new_tail.next = None  # pyright: ignore[reportOptionalMemberAccess]
         node = new_head
-        while node.next:  # type: ignore
-            node = node.next  # type: ignore
-        node.next = head  # type: ignore
+        while node.next:  # pyright: ignore[reportOptionalMemberAccess]
+            node = node.next  # pyright: ignore[reportOptionalMemberAccess]
+        node.next = head  # pyright: ignore[reportOptionalMemberAccess]
         return new_head
 
 

@@ -40,7 +40,7 @@ solution = Solution()
 
 
 num_courses = 2
-prerequisites = [[1, 0]]
+prerequisites: list[list[int]] = [[1, 0]]
 assert solution.findOrder(num_courses, prerequisites) in ([0, 1],)
 
 num_courses = 4
@@ -48,17 +48,17 @@ prerequisites = [[1, 0], [2, 0], [3, 1], [3, 2]]
 assert solution.findOrder(num_courses, prerequisites) in ([0, 1, 2, 3], [0, 2, 1, 3])
 
 num_courses = 1
-prerequisites: list[list[int]] = []
+prerequisites = []
 assert solution.findOrder(num_courses, prerequisites) in ([0],)
 
 num_courses = 2
-prerequisites: list[list[int]] = [[1, 0], [0, 1]]
+prerequisites = [[1, 0], [0, 1]]
 assert solution.findOrder(num_courses, prerequisites) in ([],)
 
 num_courses = 3
-prerequisites: list[list[int]] = [[1, 0]]
+prerequisites = [[1, 0]]
 assert solution.findOrder(num_courses, prerequisites) in ([0, 1, 2], [2, 0, 1])
 
 num_courses = 2
-prerequisites: list[list[int]] = []
+prerequisites = []
 assert solution.findOrder(num_courses, prerequisites) in ([1, 0], [0, 1])

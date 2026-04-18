@@ -36,7 +36,7 @@ solution = Solution()
 
 
 n = 4
-edges = [[1, 0], [1, 2], [1, 3]]
+edges: list[list[int]] = [[1, 0], [1, 2], [1, 3]]
 assert sorted(solution.findMinHeightTrees(n, edges)) == sorted([1])
 
 n = 6
@@ -44,7 +44,7 @@ edges = [[3, 0], [3, 1], [3, 2], [3, 4], [5, 4]]
 assert sorted(solution.findMinHeightTrees(n, edges)) == sorted([3, 4])
 
 n = 1
-edges: list[list[int]] = []
+edges = []
 assert sorted(solution.findMinHeightTrees(n, edges)) == sorted([0])
 
 n = 2

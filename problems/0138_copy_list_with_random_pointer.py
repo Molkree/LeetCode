@@ -3,7 +3,9 @@
 
 
 class Node:
-    def __init__(self, x: int, next: Node | None = None, random: Node | None = None):
+    def __init__(
+        self, x: int, next: Node | None = None, random: Node | None = None
+    ) -> None:
         self.val = int(x)
         self.next = next
         self.random = random
@@ -22,11 +24,11 @@ class Solution:
             copy_node = copy_node.next
             node = node.next
             old_to_new[node] = copy_node
-        node = head
-        while node:
-            if old_rand_node := node.random:
-                new_node = old_to_new[node]
+        copy_node_2: Node | None = head
+        while copy_node_2:
+            if old_rand_node := copy_node_2.random:
+                new_node = old_to_new[copy_node_2]
                 new_rand_node = old_to_new[old_rand_node]
                 new_node.random = new_rand_node
-            node = node.next
+            copy_node_2 = copy_node_2.next
         return copy_head

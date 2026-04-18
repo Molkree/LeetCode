@@ -37,7 +37,7 @@ class Solution:
 solution = Solution()
 
 
-matrix = [
+matrix: list[list[str]] = [
     ["1", "0", "1", "0", "0"],
     ["1", "0", "1", "1", "1"],
     ["1", "1", "1", "1", "1"],
@@ -45,7 +45,7 @@ matrix = [
 ]
 assert solution.maximalRectangle(matrix) == 6
 
-matrix: list[list[str]] = []
+matrix = []
 assert solution.maximalRectangle(matrix) == 0
 
 matrix = [["0"]]

@@ -4,7 +4,8 @@
 
 class Solution:
     def bitwiseComplement(self, n: int) -> int:  # noqa: N802
-        return int(bin(n)[2:].translate(str.maketrans({"0": "1", "1": "0"})), 2)
+        trans = str.maketrans({"0": "1", "1": "0"})
+        return int(bin(n)[2:].translate(trans), 2)
 
 
 solution = Solution()

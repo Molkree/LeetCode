@@ -3,7 +3,7 @@
 
 
 class ListNode:
-    def __init__(self, val: int = 0, next: ListNode | None = None):
+    def __init__(self, val: int = 0, next: ListNode | None = None) -> None:
         self.val = val
         self.next = next
 
@@ -19,7 +19,7 @@ def to_list(node: ListNode | None) -> list[int] | None:
     return result
 
 
-def to_list_node(def_list: list[int]):
+def to_list_node(def_list: list[int]) -> ListNode | None:
     if not def_list:
         return None
     result = ListNode(def_list.pop(0))

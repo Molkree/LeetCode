@@ -10,12 +10,12 @@ class DSU:
     def __init__(self, n: int) -> None:
         self.values = list(range(n))
 
-    def find(self, x: int):
+    def find(self, x: int) -> int:
         if self.values[x] != x:
             self.values[x] = self.find(self.values[x])
         return self.values[x]
 
-    def union(self, x: int, y: int):
+    def union(self, x: int, y: int) -> None:
         xr, yr = self.find(x), self.find(y)
         self.values[xr] = yr
 

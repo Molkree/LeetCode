@@ -54,8 +54,8 @@ class Solution:
 solution = Solution()
 
 
-first_list = [[0, 2], [5, 10], [13, 23], [24, 25]]
-second_list = [[1, 5], [8, 12], [15, 24], [25, 26]]
+first_list: list[list[int]] = [[0, 2], [5, 10], [13, 23], [24, 25]]
+second_list: list[list[int]] = [[1, 5], [8, 12], [15, 24], [25, 26]]
 assert solution.intervalIntersection(first_list, second_list) == [
     [1, 2],
     [5, 5],
@@ -66,10 +66,10 @@ assert solution.intervalIntersection(first_list, second_list) == [
 ]
 
 first_list = [[1, 3], [5, 9]]
-second_list: list[list[int]] = []
+second_list = []
 assert solution.intervalIntersection(first_list, second_list) == []
 
-first_list: list[list[int]] = []
+first_list = []
 second_list = [[4, 8], [10, 12]]
 assert solution.intervalIntersection(first_list, second_list) == []
 

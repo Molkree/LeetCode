@@ -29,11 +29,11 @@ class Solution:
 solution = Solution()
 
 
-nums = [-1, 0, 1, 2, -1, -4]
+nums: list[int] = [-1, 0, 1, 2, -1, -4]
 print(solution.threeSum(nums))
 # [[-1,-1,2],[-1,0,1]]
 
-nums: list[int] = []
+nums = []
 assert [] == solution.threeSum(nums)
 
 nums = [0]

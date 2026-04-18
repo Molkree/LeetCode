@@ -16,7 +16,8 @@ class Solution:
                     break
                 else:
                     break
-        return dp[0] + sum(len(digits) ** i for i in range(1, n_len))
+        sum_num: int = sum(len(digits) ** i for i in range(1, n_len))
+        return dp[0] + sum_num
 
 
 solution = Solution()

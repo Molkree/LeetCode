@@ -35,7 +35,7 @@ class Solution:
             return 0
         if not root.left and not root.right:
             return 1
-        node = root
+        node: TreeNode | None = root
         depth = -1
         while node:
             depth += 1
@@ -57,7 +57,9 @@ class Solution:
 solution = Solution()
 
 
-root = TreeNode(1, TreeNode(2, TreeNode(4), TreeNode(5)), TreeNode(3, TreeNode(6)))
+root: TreeNode | None = TreeNode(
+    1, TreeNode(2, TreeNode(4), TreeNode(5)), TreeNode(3, TreeNode(6))
+)
 assert solution.countNodes(root) == 6
 
 root = TreeNode(
