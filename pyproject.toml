@@ -8,9 +8,19 @@ authors = [{ name = "Dmitrii Volodin", email = "mr.molkree@gmail.com" }]
 build = ["uv==0.11.11"]
 dev = [
     "black==26.3.1",
+    "flake8-bugbear==25.11.29",
+    "Flake8-pyproject==1.2.4",
     "flake8==7.3.0",
     "isort==8.0.1",
     "mypy==1.20.2",
     "pep8-naming==0.15.1",
     "prek==0.3.13",
 ]
+
+[tool.flake8]
+max-line-length = 80
+extend-select = ["B950"]
+extend-ignore = ["E203", "E501", "E701"]
+
+[tool.isort]
+profile = "black"

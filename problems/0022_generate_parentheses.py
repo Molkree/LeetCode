@@ -6,21 +6,25 @@ from functools import cache
 from itertools import product
 
 
+@cache
+def generate_parenthesis(n: int) -> list[str]:
+    if n == 1:
+        return ["()"]
+    parenthesis: set[str] = set()
+    prev_parens = generate_parenthesis(n - 1)
+    for parens in prev_parens:
+        parenthesis.add(f"({parens})")
+    for count in range(1, n):
+        prev_parens_a = generate_parenthesis(count)
+        prev_parens_b = generate_parenthesis(n - count)
+        for parens_a, parens_b in product(prev_parens_a, prev_parens_b):
+            parenthesis.add(f"{parens_a}{parens_b}")
+    return list(parenthesis)
+
+
 class Solution:
-    @cache
     def generateParenthesis(self, n: int) -> list[str]:  # noqa: N802
-        if n == 1:
-            return ["()"]
-        parenthesis: set[str] = set()
-        prev_parens = self.generateParenthesis(n - 1)
-        for parens in prev_parens:
-            parenthesis.add(f"({parens})")
-        for count in range(1, n):
-            prev_parens_a = self.generateParenthesis(count)
-            prev_parens_b = self.generateParenthesis(n - count)
-            for parens_a, parens_b in product(prev_parens_a, prev_parens_b):
-                parenthesis.add(f"{parens_a}{parens_b}")
-        return list(parenthesis)
+        return generate_parenthesis(n)
 
 
 solution = Solution()

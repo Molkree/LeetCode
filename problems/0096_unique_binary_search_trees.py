@@ -5,17 +5,21 @@
 from functools import cache
 
 
+@cache
+def num_trees(n: int) -> int:
+    if n < 2:
+        return 1
+    result = 0
+    for i in range(n):
+        left = num_trees(n - 1 - i)
+        right = num_trees(i)
+        result += left * right
+    return result
+
+
 class Solution:
-    @cache
     def numTrees(self, n: int) -> int:  # noqa: N802
-        if n < 2:
-            return 1
-        result = 0
-        for i in range(n):
-            left = self.numTrees(n - 1 - i)
-            right = self.numTrees(i)
-            result += left * right
-        return result
+        return num_trees(n)
 
 
 solution = Solution()

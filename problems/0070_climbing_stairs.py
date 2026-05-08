@@ -5,11 +5,15 @@
 from functools import cache
 
 
+@cache
+def climb_stairs(n: int) -> int:
+    if n == 1:
+        return 1
+    if n == 2:
+        return 2
+    return climb_stairs(n - 2) + climb_stairs(n - 1)
+
+
 class Solution:
-    @cache
     def climbStairs(self, n: int) -> int:  # noqa: N802
-        if n == 1:
-            return 1
-        if n == 2:
-            return 2
-        return self.climbStairs(n - 2) + self.climbStairs(n - 1)
+        return climb_stairs(n)

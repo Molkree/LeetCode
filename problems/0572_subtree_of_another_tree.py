@@ -5,52 +5,13 @@
 class TreeNode:
     def __init__(
         self, val: int = 0, left: TreeNode | None = None, right: TreeNode | None = None
-    ):
+    ) -> None:
         self.val = val
         self.left = left
         self.right = right
 
 
 class Solution:
-    # chunky slow solution
-    # from collections import deque
-    # def isSubtree(self, root: TreeNode, sub_root: TreeNode) -> bool:  # noqa: N802
-    #     queue: deque[TreeNode] = deque()
-    #     queue.append(root)
-    #     while queue:
-    #         node = queue.popleft()
-    #         if node.val == sub_root.val:
-    #             sub_queue: deque[TreeNode] = deque()
-    #             tmp_queue: deque[TreeNode] = deque()
-    #             sub_queue.append(sub_root)
-    #             tmp_queue.append(node)
-    #             while sub_queue:
-    #                 sub_node = sub_queue.popleft()
-    #                 tmp_node = tmp_queue.popleft()
-    #                 if (
-    #                     sub_node.val != tmp_node.val
-    #                     or bool(sub_node.left) ^ bool(tmp_node.left)
-    #                     or bool(sub_node.right) ^ bool(tmp_node.right)
-    #                 ):
-    #                     break
-    #                 if sub_node.left:
-    #                     sub_queue.append(sub_node.left)
-    #                 if sub_node.right:
-    #                     sub_queue.append(sub_node.right)
-    #                 if tmp_node.left:
-    #                     tmp_queue.append(tmp_node.left)
-    #                 if tmp_node.right:
-    #                     tmp_queue.append(tmp_node.right)
-    #                 if len(sub_queue) != len(tmp_queue):
-    #                     break
-    #                 if not sub_queue and not tmp_queue and sub_node.val == tmp_node.val:
-    #                     return True
-    #         if node.left:
-    #             queue.append(node.left)
-    #         if node.right:
-    #             queue.append(node.right)
-    #     return False
-
     # faster solution
     def isSubtree(  # noqa: N802
         self, root: TreeNode | None, sub_root: TreeNode | None

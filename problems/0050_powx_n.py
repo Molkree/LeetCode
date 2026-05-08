@@ -5,16 +5,19 @@
 from functools import cache
 
 
+@cache
+def my_pow(x: float, n: int) -> float:
+    if not n:
+        return 1
+    if n < 0:
+        n = -n
+        x = 1 / x
+    return x * my_pow(x * x, n // 2) if n % 2 else my_pow(x * x, n // 2)
+
+
 class Solution:
-    @cache
     def myPow(self, x: float, n: int) -> float:  # noqa: N802
-        if not n:
-            return 1
-        if n < 0:
-            n = -n
-            x = 1 / x
-        return x * self.myPow(x * x, n // 2) if n % 2 else self.myPow(x * x, n // 2)
-        return x**n
+        return my_pow(x, n)
 
 
 solution = Solution()

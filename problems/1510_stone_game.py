@@ -5,17 +5,21 @@
 from functools import cache
 
 
-class Solution:
-    @cache
-    def winnerSquareGame(self, n: int) -> bool:  # noqa: N802
-        if n == 0:
-            return False
-        num = int(n**0.5)
-        while num >= 1:
-            if not self.winnerSquareGame(n - num * num):
-                return True
-            num -= 1
+@cache
+def winner_square_game(n: int) -> bool:
+    if n == 0:
         return False
+    num = int(n**0.5)
+    while num >= 1:
+        if not winner_square_game(n - num * num):
+            return True
+        num -= 1
+    return False
+
+
+class Solution:
+    def winnerSquareGame(self, n: int) -> bool:  # noqa: N802
+        return winner_square_game(n)
 
 
 solution = Solution()

@@ -3,7 +3,7 @@
 
 
 class Node:
-    def __init__(self, val: int, children: list[Node] = []):
+    def __init__(self, val: int, children: list[Node]) -> None:
         self.val = val
         self.children = children
 
