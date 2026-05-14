@@ -17,6 +17,9 @@ dev = [
     "prek==0.3.13",
 ]
 
+[tool.uv]
+exclude-newer = "1 week"
+
 [tool.flake8]
 max-line-length = 80
 extend-select = ["B950"]
