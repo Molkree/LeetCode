@@ -12,3 +12,5 @@ updates:
       interval: "daily"
     cooldown:
       default-days: 7
+    commit-message:
+      prefix: "fix"
