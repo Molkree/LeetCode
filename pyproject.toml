@@ -7,7 +7,7 @@ authors = [{ name = "Dmitrii Volodin", email = "mr.molkree@gmail.com" }]
 [dependency-groups]
 build = ["uv==0.11.14"]
 dev = [
-    "black==26.5.0",
+    "black==26.5.1",
     "flake8-bugbear==25.11.29",
     "Flake8-pyproject==1.2.4",
     "flake8==7.3.0",
