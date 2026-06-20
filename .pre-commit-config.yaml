@@ -4,7 +4,7 @@ auto_update:
   cooldown_days: 7
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v6.0.0
+    rev: 3e8a8703264a2f4a69428a0aa4dcb512790b2c8c  # frozen: v6.0.0
     hooks:
       - id: check-added-large-files
       - id: check-merge-conflict
@@ -15,24 +15,24 @@ repos:
       - id: trailing-whitespace
 
   - repo: https://github.com/pycqa/isort
-    rev: 8.0.1
+    rev: a333737ed43df02b18e6c95477ea1b285b3de15a  # frozen: 8.0.1
     hooks:
       - id: isort
         args: ["--profile", "black"]
 
   - repo: https://github.com/psf/black-pre-commit-mirror
-    rev: 26.5.1
+    rev: 4160603246a6b365d4a2af661c6d71b0a0f50478  # frozen: 26.5.1
     hooks:
       - id: black
 
   - repo: https://github.com/asottile/pyupgrade
-    rev: v3.21.2
+    rev: 75992aaa40730136014f34227e0135f63fc951b4  # frozen: v3.21.2
     hooks:
       - id: pyupgrade
         args: ["--py314-plus"]
 
   - repo: https://github.com/PyCQA/autoflake
-    rev: v2.3.3
+    rev: 988e469555a54b0b16e39faf16ae84ff247fd337  # frozen: v2.3.3
     hooks:
       - id: autoflake
         args:
@@ -41,7 +41,7 @@ repos:
           - --remove-all-unused-imports
 
   - repo: https://github.com/pycqa/flake8
-    rev: 7.3.0
+    rev: c48217e1fc006c2dddd14df54e83b67da15de5cd  # frozen: 7.3.0
     hooks:
       - id: flake8
         additional_dependencies:
@@ -51,7 +51,12 @@ repos:
         language: python
 
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: v2.1.0
+    rev: d2823d321df3af8f878f7ee3414dc94d037145b9  # frozen: v2.1.0
     hooks:
       - id: mypy
         args: ["--strict"]
+
+  - repo: https://github.com/astral-sh/uv-pre-commit
+    rev: fe063293315003e95dff96d43c4928f8799a5c62 # frozen: 0.11.21
+    hooks:
+      - id: uv-lock
