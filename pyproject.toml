@@ -14,7 +14,7 @@ dev = [
     "isort==8.0.1",
     "mypy==2.2.0",
     "pep8-naming==0.15.1",
-    "prek==0.4.8",
+    "prek==0.4.10",
 ]
 
 [tool.uv]
