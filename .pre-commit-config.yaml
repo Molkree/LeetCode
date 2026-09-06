@@ -16,7 +16,7 @@ repos:
       - id: trailing-whitespace
 
   - repo: https://github.com/pycqa/isort
-    rev: a333737ed43df02b18e6c95477ea1b285b3de15a  # frozen: 8.0.1
+    rev: 131f4adcd5582bfc53928ab0d740eceb8b506b6c  # frozen: 9.0.1
     hooks:
       - id: isort
         args: ["--profile", "black"]
@@ -33,7 +33,7 @@ repos:
         args: ["--py314-plus"]
 
   - repo: https://github.com/PyCQA/autoflake
-    rev: 988e469555a54b0b16e39faf16ae84ff247fd337  # frozen: v2.3.3
+    rev: 6d9dd2716540ab776f29c7b896cd3052ef4619b2  # frozen: v2.4.0
     hooks:
       - id: autoflake
         args:
@@ -52,12 +52,12 @@ repos:
         language: python
 
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: 41e691678310dfd3833f7ab4e180ddb014310356  # frozen: v2.3.0
+    rev: 7ff8d35ae36a7d2b968f2f90b4c723e292e594ee  # frozen: v2.3.1
     hooks:
       - id: mypy
         args: ["--strict"]
 
   - repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 8ff2449591c8de025b17661ba76d60237a1ae62b # frozen: 0.12.1
+    rev: 0f34924c4110aca2294a4e4204aac7b3e31803fb # frozen: 0.12.7
     hooks:
       - id: uv-lock
