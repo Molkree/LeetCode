@@ -5,10 +5,10 @@ requires-python = ">=3.14"
 authors = [{ name = "Dmitrii Volodin", email = "mr.molkree@gmail.com" }]
 
 [dependency-groups]
-build = ["uv==0.12.10"]
+build = ["uv==0.12.13"]
 dev = [
     "black==26.5.1",
-    "flake8-bugbear==25.11.29",
+    "flake8-bugbear==26.9.9",
     "Flake8-pyproject==1.2.4",
     "flake8==7.3.0",
     "isort==9.0.1",
