@@ -42,7 +42,7 @@ repos:
           - --remove-all-unused-imports
 
   - repo: https://github.com/pycqa/flake8
-    rev: c48217e1fc006c2dddd14df54e83b67da15de5cd  # frozen: 7.3.0
+    rev: 7eccf20b526fe4f2230bf9afeeef2fc9f97faf8d  # frozen: 7.4.1
     hooks:
       - id: flake8
         additional_dependencies:
@@ -58,6 +58,6 @@ repos:
         args: ["--strict"]
 
   - repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 17a6b18b8006d390e476d419631aae885cadfa40 # frozen: 0.12.17
+    rev: 2aeb804518b4373dbf5adb8dddc5466d9a6e6b21 # frozen: 0.12.19
     hooks:
       - id: uv-lock
