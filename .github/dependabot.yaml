@@ -9,7 +9,7 @@ updates:
         patterns:
           - "*"
     cooldown:
-      default-days: 8
+      default-days: 7
     commit-message:
       prefix: "build"
   - package-ecosystem: "pre-commit"
@@ -21,6 +21,6 @@ updates:
         patterns:
           - "*"
     cooldown:
-      default-days: 8
+      default-days: 7
     commit-message:
       prefix: "ci"
