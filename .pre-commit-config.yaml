@@ -16,7 +16,7 @@ repos:
       - id: trailing-whitespace
 
   - repo: https://github.com/pycqa/isort
-    rev: 131f4adcd5582bfc53928ab0d740eceb8b506b6c  # frozen: 9.0.1
+    rev: 9f905615631c545f5aea2516508109350d1d2f7d  # frozen: 9.0.2
     hooks:
       - id: isort
         args: ["--profile", "black"]
@@ -46,18 +46,18 @@ repos:
     hooks:
       - id: flake8
         additional_dependencies:
-          - flake8-bugbear==26.9.9
+          - flake8-bugbear==26.9.30
           - Flake8-pyproject==1.2.4
           - pep8-naming==0.15.1
         language: python
 
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: 7ff8d35ae36a7d2b968f2f90b4c723e292e594ee  # frozen: v2.3.1
+    rev: 2834ec6639549dd6796205c8f011dedcd587288b  # frozen: v2.4.0
     hooks:
       - id: mypy
         args: ["--strict"]
 
   - repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 2aeb804518b4373dbf5adb8dddc5466d9a6e6b21 # frozen: 0.12.19
+    rev: 0f4b65a503cc866b9b5e62dda2020f7943b01a65 # frozen: 0.12.22
     hooks:
       - id: uv-lock
