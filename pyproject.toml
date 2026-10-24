@@ -5,7 +5,7 @@ requires-python = ">=3.14"
 authors = [{ name = "Dmitrii Volodin", email = "mr.molkree@gmail.com" }]
 
 [dependency-groups]
-build = ["uv==0.13.0"]
+build = ["uv==0.13.5"]
 dev = [
     "black==26.10.1",
     "flake8-bugbear==26.9.30",
@@ -19,6 +19,9 @@ dev = [
 
 [tool.uv]
 exclude-newer = "1 week"
+
+[tool.uv.exclude-newer-package]
+uv = "2026-10-22T01:32:33.910Z"
 
 [tool.flake8]
 max-line-length = 80

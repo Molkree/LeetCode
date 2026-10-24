@@ -58,6 +58,6 @@ repos:
         args: ["--strict"]
 
   - repo: https://github.com/astral-sh/uv-pre-commit
-    rev: 2e145a365871c9fef3715d38b9b7393ce4174c85 # frozen: 0.13.0
+    rev: eeca16c54e09b4d9a848259e46bae14737944348 # frozen: 0.13.5
     hooks:
       - id: uv-lock
