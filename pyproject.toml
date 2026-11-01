@@ -14,14 +14,11 @@ dev = [
     "isort==9.0.2",
     "mypy==2.4.0",
     "pep8-naming==0.15.1",
-    "prek==0.5.5",
+    "prek==0.5.7",
 ]
 
 [tool.uv]
 exclude-newer = "1 week"
-
-[tool.uv.exclude-newer-package]
-uv = "2026-10-22T01:32:33.910Z"
 
 [tool.flake8]
 max-line-length = 80
