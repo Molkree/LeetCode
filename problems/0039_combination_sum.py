@@ -16,7 +16,7 @@ class Solution:
                 result.append(nums)
                 return
             for i in range(index, len(candidates)):
-                find_sum(i, nums + [candidates[i]])
+                find_sum(i, [*nums, candidates[i]])
 
         find_sum(0, [])
         return result

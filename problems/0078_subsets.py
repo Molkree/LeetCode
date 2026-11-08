@@ -6,7 +6,7 @@ class Solution:
     def subsets(self, nums: list[int]) -> list[list[int]]:
         result: list[list[int]] = [[]]
         for num in nums:
-            result += [[num] + lst for lst in result]
+            result += [[num, *lst] for lst in result]
         return result
 
 

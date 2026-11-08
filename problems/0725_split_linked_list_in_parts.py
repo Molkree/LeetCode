@@ -65,12 +65,18 @@ solution = Solution()
 
 head = to_list_node([1, 2, 3])
 k = 5
-assert [[1], [2], [3], None, None] == [
-    to_list(node) for node in solution.splitListToParts(head, k)
+assert [to_list(node) for node in solution.splitListToParts(head, k)] == [
+    [1],
+    [2],
+    [3],
+    None,
+    None,
 ]
 
 head = to_list_node([1, 2, 3, 4, 5, 6, 7, 8, 9, 10])
 k = 3
-assert [[1, 2, 3, 4], [5, 6, 7], [8, 9, 10]] == [
-    to_list(node) for node in solution.splitListToParts(head, k)
+assert [to_list(node) for node in solution.splitListToParts(head, k)] == [
+    [1, 2, 3, 4],
+    [5, 6, 7],
+    [8, 9, 10],
 ]

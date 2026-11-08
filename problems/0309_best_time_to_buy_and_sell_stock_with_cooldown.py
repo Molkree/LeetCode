@@ -19,7 +19,7 @@ solution = Solution()
 
 
 prices = [1, 2, 3, 0, 2]
-assert 3 == solution.maxProfit(prices)
+assert solution.maxProfit(prices) == 3
 
 prices = [1]
-assert 0 == solution.maxProfit(prices)
+assert solution.maxProfit(prices) == 0

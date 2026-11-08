@@ -5,12 +5,8 @@
 class Solution:
     def isNumber(self, s: str) -> bool:  # noqa: N802
         def is_integer(s: str) -> bool:
-            return (
-                len(s) > 0
-                and all(char.isdigit() for char in s)
-                or len(s) > 1
-                and s[0] in "+-"
-                and all(char.isdigit() for char in s[1:])
+            return (len(s) > 0 and all(char.isdigit() for char in s)) or (
+                len(s) > 1 and s[0] in "+-" and all(char.isdigit() for char in s[1:])
             )
 
         def is_decimal(s: str) -> bool:
@@ -27,12 +23,9 @@ class Solution:
                 return len(part) > 0 and all(char.isdigit() for char in part)
 
             return (
-                nonempty_part(int_part)
-                and len(frac_part) == 0
-                or len(int_part) == 0
-                and nonempty_part(frac_part)
-                or nonempty_part(int_part)
-                and nonempty_part(frac_part)
+                (nonempty_part(int_part) and len(frac_part) == 0)
+                or (len(int_part) == 0 and nonempty_part(frac_part))
+                or (nonempty_part(int_part) and nonempty_part(frac_part))
             )
 
         parts = s.lower().split("e")
@@ -40,9 +33,7 @@ class Solution:
             return False
         if not is_decimal(parts[0]) and not is_integer(parts[0]):
             return False
-        if len(parts) == 2 and not is_integer(parts[1]):
-            return False
-        return True
+        return not (len(parts) == 2 and not is_integer(parts[1]))
 
 
 solution = Solution()

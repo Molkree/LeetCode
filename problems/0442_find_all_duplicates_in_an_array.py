@@ -15,10 +15,10 @@ class Solution:
 solution = Solution()
 
 nums = [4, 3, 2, 7, 8, 2, 3, 1]
-assert [2, 3] == solution.findDuplicates(nums)
+assert solution.findDuplicates(nums) == [2, 3]
 
 nums = [1, 1, 2]
-assert [1] == solution.findDuplicates(nums)
+assert solution.findDuplicates(nums) == [1]
 
 nums = [1]
-assert [] == solution.findDuplicates(nums)
+assert not solution.findDuplicates(nums)

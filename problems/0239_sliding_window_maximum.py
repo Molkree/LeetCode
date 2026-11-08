@@ -9,15 +9,13 @@ class Solution:
     def maxSlidingWindow(self, nums: list[int], k: int) -> list[int]:  # noqa: N802
         queue = deque[int]()
         result = list[int]()
-        counter = 0
         for index, num in enumerate(nums):
             while queue and nums[queue[-1]] < num:
                 queue.pop()
             queue.append(index)
             if index - queue[0] == k:
                 queue.popleft()
-            counter += 1
-            if counter >= k:
+            if index + 1 >= k:
                 result.append(nums[queue[0]])
         return result
 

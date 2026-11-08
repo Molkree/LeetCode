@@ -20,10 +20,10 @@ solution = Solution()
 
 
 n = 1
-assert 1 == solution.numSquares(n)
+assert solution.numSquares(n) == 1
 
 n = 12
-assert 3 == solution.numSquares(n)
+assert solution.numSquares(n) == 3
 
 n = 13
-assert 2 == solution.numSquares(n)
+assert solution.numSquares(n) == 2

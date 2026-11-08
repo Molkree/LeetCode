@@ -24,7 +24,7 @@ class Solution:
 solution = Solution()
 
 dungeon = [[-2, -3, 3], [-5, -10, 1], [10, 30, -5]]
-assert 7 == solution.calculateMinimumHP(dungeon)
+assert solution.calculateMinimumHP(dungeon) == 7
 
 dungeon = [[0]]
-assert 1 == solution.calculateMinimumHP(dungeon)
+assert solution.calculateMinimumHP(dungeon) == 1

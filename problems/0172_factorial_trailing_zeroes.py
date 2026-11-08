@@ -23,13 +23,13 @@ solution = Solution()
 print(factorial(25))
 
 n = 3
-assert 0 == solution.trailingZeroes(n)
+assert solution.trailingZeroes(n) == 0
 
 n = 5
-assert 1 == solution.trailingZeroes(n)
+assert solution.trailingZeroes(n) == 1
 
 n = 0
-assert 0 == solution.trailingZeroes(n)
+assert solution.trailingZeroes(n) == 0
 
 n = 25
-assert 6 == solution.trailingZeroes(n)
+assert solution.trailingZeroes(n) == 6

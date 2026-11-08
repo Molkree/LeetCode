@@ -7,9 +7,8 @@ class Solution:
         non_decreasing = True
         for i in range(len(nums) - 1):
             if nums[i] > nums[i + 1]:
-                if (
-                    not non_decreasing
-                    or 0 < i < len(nums) - 2
+                if not non_decreasing or (
+                    0 < i < len(nums) - 2
                     and nums[i - 1] > nums[i + 1]
                     and nums[i] > nums[i + 2]
                 ):

@@ -1,6 +1,8 @@
 # https://leetcode.com/problems/path-sum-iii/
 # 437. Path Sum III
 
+from typing import ClassVar
+
 
 class TreeNode:
     def __init__(
@@ -12,7 +14,7 @@ class TreeNode:
 
 
 class Solution:
-    roots: set[TreeNode] = set()
+    roots: ClassVar[set[TreeNode]] = set()
 
     def check_path(self, root: TreeNode | None, target_sum: int, cur_sum: int) -> int:
         if not root:
@@ -43,7 +45,7 @@ root = TreeNode(
     TreeNode(-3, right=TreeNode(11)),
 )
 target_sum = 8
-assert 3 == solution.pathSum(root, target_sum)
+assert solution.pathSum(root, target_sum) == 3
 
 root = TreeNode(
     5,
@@ -51,10 +53,10 @@ root = TreeNode(
     TreeNode(8, TreeNode(13), TreeNode(4, TreeNode(5), TreeNode(1))),
 )
 target_sum = 22
-assert 3 == solution.pathSum(root, target_sum)
+assert solution.pathSum(root, target_sum) == 3
 
 root = TreeNode(
     1, right=TreeNode(2, right=TreeNode(3, right=TreeNode(4, right=TreeNode(5))))
 )
 target_sum = 3
-assert 2 == solution.pathSum(root, target_sum)
+assert solution.pathSum(root, target_sum) == 2

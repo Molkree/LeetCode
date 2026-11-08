@@ -20,16 +20,16 @@ solution = Solution()
 
 text1 = "oxcpqrsvwf"
 text2 = "shmtulqrypy"
-assert 2 == solution.longestCommonSubsequence(text1, text2)
+assert solution.longestCommonSubsequence(text1, text2) == 2
 
 text1 = "abcde"
 text2 = "ace"
-assert 3 == solution.longestCommonSubsequence(text1, text2)
+assert solution.longestCommonSubsequence(text1, text2) == 3
 
 text1 = "abc"
 text2 = "abc"
-assert 3 == solution.longestCommonSubsequence(text1, text2)
+assert solution.longestCommonSubsequence(text1, text2) == 3
 
 text1 = "abc"
 text2 = "def"
-assert 0 == solution.longestCommonSubsequence(text1, text2)
+assert solution.longestCommonSubsequence(text1, text2) == 0

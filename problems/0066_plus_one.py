@@ -18,9 +18,9 @@ class Solution:
         digits[-1] = (digits[-1] + 1) % 10
         if digits[-1] == 0:
             if len(digits) == 1:
-                digits = [1] + digits
+                digits = [1, *digits]
             else:
-                digits = self.plusOne(digits[:-1]) + [digits[-1]]
+                digits = [*self.plusOne(digits[:-1]), digits[-1]]
         return digits
 
 

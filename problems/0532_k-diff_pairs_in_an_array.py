@@ -10,7 +10,7 @@ class Solution:
         # linear
         counter = Counter(nums)
         return sum(
-            k > 0 and num + k in counter or k == 0 and counter[num] > 1
+            (k > 0 and num + k in counter) or (k == 0 and counter[num] > 1)
             for num in counter
         )
         # n * logn

@@ -9,12 +9,10 @@ class Solution:
             low, high = 0, len(nums) - 1
             while low < high:
                 cur_sum = nums[low] + nums[high]
-                if cur_sum < target or low and nums[low - 1] == nums[low]:
+                if cur_sum < target or (low and nums[low - 1] == nums[low]):
                     low += 1
-                elif (
-                    cur_sum > target
-                    or high < len(nums) - 1
-                    and nums[high] == nums[high + 1]
+                elif cur_sum > target or (
+                    high < len(nums) - 1 and nums[high] == nums[high + 1]
                 ):
                     high -= 1
                 else:
@@ -33,7 +31,7 @@ class Solution:
                 if i and nums[i - 1] == nums[i]:
                     continue
                 for good_nums in k_sum(nums[i + 1 :], target - nums[i], k - 1):
-                    result.append([nums[i]] + good_nums)
+                    result.append([nums[i], *good_nums])
             return result
 
         nums.sort()

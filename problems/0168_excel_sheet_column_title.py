@@ -7,7 +7,7 @@ import string
 
 class Solution:
     def convertToTitle(self, column_number: int) -> str:  # noqa: N802
-        table = dict(zip(range(1, 26), string.ascii_uppercase))
+        table = dict(zip(range(1, 26), string.ascii_uppercase, strict=False))
         table[0] = "Z"
         result = ""
         while column_number > 0:

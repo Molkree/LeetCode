@@ -15,7 +15,9 @@ class Solution:
                 direction = move[instruction][direction]
             else:
                 moves[direction] += 1
-        return direction != "U" or moves["U"] == moves["D"] and moves["L"] == moves["R"]
+        return direction != "U" or (
+            moves["U"] == moves["D"] and moves["L"] == moves["R"]
+        )
 
 
 solution = Solution()

@@ -5,25 +5,38 @@ requires-python = ">=3.14"
 authors = [{ name = "Dmitrii Volodin", email = "mr.molkree@gmail.com" }]
 
 [dependency-groups]
-build = ["uv==0.13.5"]
+build = ["uv==0.13.6"]
 dev = [
-    "black==26.10.1",
-    "flake8-bugbear==26.9.30",
-    "Flake8-pyproject==1.2.4",
-    "flake8==7.4.1",
-    "isort==9.0.2",
-    "mypy==2.4.0",
-    "pep8-naming==0.15.1",
-    "prek==0.5.7",
+    "mypy==2.4.1",
+    "prek==0.5.9",
+    "ruff==0.17.3",
 ]
 
 [tool.uv]
 exclude-newer = "1 week"
 
-[tool.flake8]
-max-line-length = 80
-extend-select = ["B950"]
-extend-ignore = ["E203", "E501", "E701"]
+[tool.ruff]
+target-version = "py315"
 
-[tool.isort]
-profile = "black"
+[tool.ruff.lint]
+ignore = ["E203", "E701", "S101", "S311"]
+select = [
+    # pycodestyle
+    "E", "W",
+    # Pyflakes
+    "F",
+    # pyupgrade
+    "UP",
+    # flake8-bugbear
+    "B",
+    # flake8-simplify
+    "SIM",
+    # isort
+    "I",
+    # flake8-bandit
+    "S",
+    # pep8-naming
+    "N",
+    # Ruff
+    "RUF",
+]

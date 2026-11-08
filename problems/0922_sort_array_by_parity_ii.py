@@ -17,10 +17,7 @@ class Solution:
 
 
 def check_answer(nums: list[int]) -> bool:
-    for ind, val in enumerate(nums):
-        if ind % 2 != val % 2:
-            return False
-    return True
+    return all(ind % 2 == val % 2 for ind, val in enumerate(nums))
 
 
 solution = Solution()

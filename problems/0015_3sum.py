@@ -34,10 +34,10 @@ print(solution.threeSum(nums))
 # [[-1,-1,2],[-1,0,1]]
 
 nums = []
-assert [] == solution.threeSum(nums)
+assert not solution.threeSum(nums)
 
 nums = [0]
-assert [] == solution.threeSum(nums)
+assert not solution.threeSum(nums)
 
 nums = [-1, 0, 1, 0]
 print(solution.threeSum(nums))

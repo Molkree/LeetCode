@@ -5,7 +5,7 @@
 class Solution:
     def canPlaceFlowers(self, flowerbed: list[int], n: int) -> bool:  # noqa: N802
         if len(flowerbed) < 3:
-            return not (any(flowerbed) and n > 0 or n > 1)
+            return not ((any(flowerbed) and n > 0) or n > 1)
         if flowerbed[0] == 0 and flowerbed[1] == 0:
             n -= 1
             flowerbed[0] = 1

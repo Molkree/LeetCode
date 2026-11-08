@@ -15,7 +15,7 @@ class Solution:
                 paths.append(path)
             else:
                 for neighbour in graph[node]:
-                    stack.append(path + [neighbour])
+                    stack.append([*path, neighbour])
         return paths
 
 

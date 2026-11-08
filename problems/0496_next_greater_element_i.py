@@ -36,8 +36,8 @@ solution = Solution()
 
 nums1 = [4, 1, 2]
 nums2 = [1, 3, 4, 2]
-assert [-1, 3, -1] == solution.nextGreaterElement(nums1, nums2)
+assert solution.nextGreaterElement(nums1, nums2) == [-1, 3, -1]
 
 nums1 = [2, 4]
 nums2 = [1, 2, 3, 4]
-assert [3, -1] == solution.nextGreaterElement(nums1, nums2)
+assert solution.nextGreaterElement(nums1, nums2) == [3, -1]

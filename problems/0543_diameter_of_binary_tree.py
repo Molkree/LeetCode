@@ -35,10 +35,10 @@ solution = Solution()
 
 root = TreeNode(1, TreeNode(2, TreeNode(4), TreeNode(5)), TreeNode(3))
 print(solution.diameterOfBinaryTree(root))
-assert 3 == solution.diameterOfBinaryTree(root)
+assert solution.diameterOfBinaryTree(root) == 3
 
 root = TreeNode(1, TreeNode(2))
-assert 1 == solution.diameterOfBinaryTree(root)
+assert solution.diameterOfBinaryTree(root) == 1
 
 root = TreeNode(1, TreeNode(2, TreeNode(4, TreeNode(41)), TreeNode(5, TreeNode(51))))
-assert 4 == solution.diameterOfBinaryTree(root)
+assert solution.diameterOfBinaryTree(root) == 4

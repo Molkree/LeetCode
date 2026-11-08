@@ -10,7 +10,7 @@ class SortedSet:
         if num in self._set:
             return False
         self._set.add(num)
-        self._list = sorted(self._list + [num])
+        self._list = sorted([*self._list, num])
         return True
 
     def contains(self, num: float) -> bool:
@@ -34,6 +34,6 @@ set_iter = iter(sorted_set)
 assert sorted_set.add(1.0)
 assert not sorted_set.add(1.0)
 assert sorted_set.contains(1.0)
-assert [1.0] == list(sorted_set)
+assert list(sorted_set) == [1.0]
 assert sorted_set.add(-1)
-assert [-1, 1] == list(sorted_set)
+assert list(sorted_set) == [-1, 1]

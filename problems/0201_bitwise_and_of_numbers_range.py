@@ -28,32 +28,32 @@ solution = Solution()
 
 left = 5
 right = 7
-assert 4 == solution.rangeBitwiseAnd(left, right)
+assert solution.rangeBitwiseAnd(left, right) == 4
 
 left = 0
 right = 0
-assert 0 == solution.rangeBitwiseAnd(left, right)
+assert solution.rangeBitwiseAnd(left, right) == 0
 
 left = 1
 right = 2147483647
-assert 0 == solution.rangeBitwiseAnd(left, right)
+assert solution.rangeBitwiseAnd(left, right) == 0
 
 left = 8
 right = 16
-assert 0 == solution.rangeBitwiseAnd(left, right)
+assert solution.rangeBitwiseAnd(left, right) == 0
 
 left = 20000
 right = 2147483647
-assert 0 == solution.rangeBitwiseAnd(left, right)
+assert solution.rangeBitwiseAnd(left, right) == 0
 
 left = 5
 right = 8
-assert 0 == solution.rangeBitwiseAnd(left, right)
+assert solution.rangeBitwiseAnd(left, right) == 0
 
 left = 10
 right = 12
-assert 8 == solution.rangeBitwiseAnd(left, right)
+assert solution.rangeBitwiseAnd(left, right) == 8
 
 left = 600000000
 right = 2147483645
-assert 0 == solution.rangeBitwiseAnd(left, right)
+assert solution.rangeBitwiseAnd(left, right) == 0

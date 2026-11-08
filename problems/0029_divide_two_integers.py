@@ -4,7 +4,7 @@
 
 class Solution:
     def divide(self, dividend: int, divisor: int) -> int:
-        is_positive = dividend < 0 and divisor < 0 or dividend > 0 and divisor > 0
+        is_positive = (dividend < 0 and divisor < 0) or (dividend > 0 and divisor > 0)
         dividend = abs(dividend)
         divisor = abs(divisor)
         quotient = 0

@@ -20,13 +20,13 @@ solution = Solution()
 
 
 prices = [3, 3, 5, 0, 0, 3, 1, 4]
-assert 6 == solution.maxProfit(prices)
+assert solution.maxProfit(prices) == 6
 
 prices = [1, 2, 3, 4, 5]
-assert 4 == solution.maxProfit(prices)
+assert solution.maxProfit(prices) == 4
 
 prices = [7, 6, 4, 3, 1]
-assert 0 == solution.maxProfit(prices)
+assert solution.maxProfit(prices) == 0
 
 prices = [1]
-assert 0 == solution.maxProfit(prices)
+assert solution.maxProfit(prices) == 0

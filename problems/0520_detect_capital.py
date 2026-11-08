@@ -5,7 +5,7 @@
 class Solution:
     def detectCapitalUse(self, word: str) -> bool:  # noqa: N802
         cases = [char.isupper() for char in word]
-        return all(cases) or not any(cases) or cases[0] and not any(cases[1:])
+        return all(cases) or not any(cases) or (cases[0] and not any(cases[1:]))
 
 
 solution = Solution()

@@ -15,10 +15,10 @@ class Solution:
 solution = Solution()
 
 nums = [-2, 1, -3, 4, -1, 2, 1, -5, 4]
-assert 6 == solution.maxSubArray(nums)
+assert solution.maxSubArray(nums) == 6
 
 nums = [1]
-assert 1 == solution.maxSubArray(nums)
+assert solution.maxSubArray(nums) == 1
 
 nums = [5, 4, -1, 7, 8]
-assert 23 == solution.maxSubArray(nums)
+assert solution.maxSubArray(nums) == 23

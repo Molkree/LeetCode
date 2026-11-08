@@ -20,9 +20,9 @@ class Solution:
                 return s1[s1_index:] == s3[s1_index + s2_index :]
             if s1[s1_index] == s3[s1_index + s2_index] and dfs(s1_index + 1, s2_index):
                 return True
-            if s2[s2_index] == s3[s1_index + s2_index] and dfs(s1_index, s2_index + 1):
-                return True
-            return False
+            return bool(
+                s2[s2_index] == s3[s1_index + s2_index] and dfs(s1_index, s2_index + 1)
+            )
 
         return dfs(0, 0)
 

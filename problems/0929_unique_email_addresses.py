@@ -19,10 +19,10 @@ emails = [
     "test.e.mail+bob.cathy@leetcode.com",
     "testemail+david@lee.tcode.com",
 ]
-assert 2 == solution.numUniqueEmails(emails)
+assert solution.numUniqueEmails(emails) == 2
 
 emails = ["a@leetcode.com", "b@leetcode.com", "c@leetcode.com"]
-assert 3 == solution.numUniqueEmails(emails)
+assert solution.numUniqueEmails(emails) == 3
 
 emails = ["test.email+alex@leetcode.com", "test.email.leet+alex@code.com"]
-assert 2 == solution.numUniqueEmails(emails)
+assert solution.numUniqueEmails(emails) == 2

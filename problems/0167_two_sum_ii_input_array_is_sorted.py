@@ -7,12 +7,10 @@ class Solution:
         low, high = 0, len(numbers) - 1
         while low < high:
             cur_sum = numbers[low] + numbers[high]
-            if cur_sum < target or low and numbers[low - 1] == numbers[low]:
+            if cur_sum < target or (low and numbers[low - 1] == numbers[low]):
                 low += 1
-            elif (
-                cur_sum > target
-                or high < len(numbers) - 1
-                and numbers[high] == numbers[high + 1]
+            elif cur_sum > target or (
+                high < len(numbers) - 1 and numbers[high] == numbers[high + 1]
             ):
                 high -= 1
             else:

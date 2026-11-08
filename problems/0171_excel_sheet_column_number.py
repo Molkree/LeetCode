@@ -7,10 +7,9 @@ import string
 
 class Solution:
     def titleToNumber(self, column_title: str) -> int:  # noqa: N802
-        table = dict(zip(string.ascii_uppercase, range(1, 27)))
-        ind = 0
+        table = dict(zip(string.ascii_uppercase, range(1, 27), strict=False))
         result = 0
-        for char in column_title[::-1]:
+        for ind, char in enumerate(column_title[::-1]):
             result += table[char] * 26**ind
             ind += 1
         return result

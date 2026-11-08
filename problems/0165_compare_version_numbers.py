@@ -16,9 +16,10 @@ class Solution:
         if revisions1_len < revisions2_len:
             if any(revision > 0 for revision in revisions2[revisions1_len:]):
                 return -1
-        elif revisions1_len > revisions2_len:
-            if any(revision > 0 for revision in revisions1[revisions2_len:]):
-                return 1
+        elif revisions1_len > revisions2_len and any(
+            revision > 0 for revision in revisions1[revisions2_len:]
+        ):
+            return 1
         return 0
 
 

@@ -64,12 +64,12 @@ class Solution:
 solution = Solution()
 l1 = to_list_node([1, 2, 4])
 l2 = to_list_node([1, 3, 4])
-assert [1, 1, 2, 3, 4, 4] == to_list(solution.mergeTwoLists(l1, l2))
+assert to_list(solution.mergeTwoLists(l1, l2)) == [1, 1, 2, 3, 4, 4]
 
 l1 = to_list_node([])
 l2 = to_list_node([])
-assert [] == to_list(solution.mergeTwoLists(l1, l2))
+assert not to_list(solution.mergeTwoLists(l1, l2))
 
 l1 = to_list_node([])
 l2 = to_list_node([0])
-assert [0] == to_list(solution.mergeTwoLists(l1, l2))
+assert to_list(solution.mergeTwoLists(l1, l2)) == [0]

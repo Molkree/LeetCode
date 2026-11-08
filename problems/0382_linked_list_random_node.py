@@ -21,7 +21,7 @@ class Solution:
     #         node = node.next
     #         self.length += 1
 
-    # def getRandom(self) -> int:  # noqa: N802
+    # def getRandom(self) -> int:
     #     ind = random.randrange(self.length)
     #     node = self.head
     #     for _ in range(ind):

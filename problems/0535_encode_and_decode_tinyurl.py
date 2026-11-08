@@ -3,10 +3,11 @@
 
 
 import hashlib
+from typing import ClassVar
 
 
 class Codec:
-    db = dict[str, str]()
+    db: ClassVar[dict[str, str]] = {}
 
     def encode(self, long_url: str) -> str:
         """Encodes a URL to a shortened URL."""

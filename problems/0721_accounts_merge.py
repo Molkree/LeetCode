@@ -35,7 +35,7 @@ class Solution:
         for email, name in email2index.items():
             index2emails[dsu.find(name)].append(email)
 
-        return [[accounts[i][0]] + sorted(emails) for i, emails in index2emails.items()]
+        return [[accounts[i][0], *sorted(emails)] for i, emails in index2emails.items()]
 
 
 solution = Solution()

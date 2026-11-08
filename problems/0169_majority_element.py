@@ -20,7 +20,7 @@ class Solution:
 solution = Solution()
 
 nums = [3, 2, 3]
-assert 3 == solution.majorityElement(nums)
+assert solution.majorityElement(nums) == 3
 
 nums = [2, 2, 1, 1, 1, 2, 2]
-assert 2 == solution.majorityElement(nums)
+assert solution.majorityElement(nums) == 2

@@ -24,7 +24,7 @@ class Solution:
         num = -num if negative else num
         if num < -(2**31):
             num = -(2**31)
-        elif 2**31 - 1 < num:
+        elif num > 2**31 - 1:
             num = 2**31 - 1
         return num
 
